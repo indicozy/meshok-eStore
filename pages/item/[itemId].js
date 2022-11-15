@@ -25,6 +25,12 @@ import { SlideData } from "../../dummy-data";
 import { IconDots, IconHeart, IconArrowBack } from "@tabler/icons";
 function ItemId() {
   const dm_bg = useColorModeValue("white", "black");
+  const dm_buy_button = useColorModeValue('teal_200', 'teal_100');
+  const dm_buy_button_hover = useColorModeValue('teal_300', 'teal_200');
+  const dm_text_button = useColorModeValue('white', 'black');
+  const dm_text = useColorModeValue("black", "white");
+  const dm_hover = useColorModeValue("second_white", "second_black");
+  
   const router = useRouter();
   const itemId = router.query.itemId;
 
@@ -38,11 +44,6 @@ function ItemId() {
   const title = item.title;
   const value = item.value;
   const description = item.description;
-  const dm_buy_button = useColorModeValue('teal_200', 'teal_100');
-  const dm_buy_button_hover = useColorModeValue('teal_300', 'teal_200');
-  const dm_text_button = useColorModeValue('white', 'black');
-  const dm_text = useColorModeValue("black", "white");
-  const dm_hover = useColorModeValue("second_white", "second_black");
   console.log(itemId);
 
   return (

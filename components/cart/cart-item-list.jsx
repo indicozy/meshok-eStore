@@ -11,6 +11,7 @@ export default function CartItemList(props) {
     >
       {list.map((item) => (
         <CartItem
+          key={item.id}
           title={item.title}
           id={item.id}
           image={item.image}

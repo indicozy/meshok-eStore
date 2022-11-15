@@ -20,6 +20,7 @@ export default function MainItemList(props) {
       >
         {list.map((item) => (
           <MainItem
+            key={item.id}
             title={item.title}
             id={item.id}
             image={item.image}
