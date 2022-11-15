@@ -1,19 +1,18 @@
-import { Box, useColorModeValue} from "@chakra-ui/react";
-import Header from "../components/Header/Header";
-import Main from '../components/Main/Main';
-import TopBar from '../components/TopBar/TopBar'
-import MobilePanel from '../components/MobilePanel/MobilePanel'
-export default function Home() {
+import { Box, useColorModeValue, Heading} from "@chakra-ui/react";
 
-  const dm_bg = useColorModeValue('white', 'black');
+import Header from "../components/header/header";
+import Main from "../components/home/main";
+import NewsBar from "../components/home/news-bar";
+import MobileFooter from "../components/mobile-footer/mobile-footer";
+
+import Link from 'next/link'
+export default function Home() {
+  const dm_bg = useColorModeValue("white", "black");
   return (
-    <Box h="100vh" pos="relative" bgColor={dm_bg} p="0">
+    <Box bgColor={dm_bg}>
       <Header />
-      <Box pt={{ md: '70px', basic: '135px' }}>
-        <TopBar />
-        <Main />
-        <MobilePanel />
-      </Box>
+      <Main />
+      <MobileFooter />
     </Box>
   );
 }
