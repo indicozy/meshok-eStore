@@ -2,7 +2,8 @@ import MainItem from "./main-item";
 import { Box, Grid } from "@chakra-ui/react";
 export default function MainItemList(props) {
 
-	const { list } = props
+	const { list, wishlist, setWishlist } = props
+  
   return (
     <Box h="100%" w="100%">
       <Grid
@@ -20,6 +21,8 @@ export default function MainItemList(props) {
       >
         {list.map((item) => (
           <MainItem
+            wishlist={wishlist} 
+            setWishlist={setWishlist}
             key={item.id}
             title={item.title}
             id={item.id}

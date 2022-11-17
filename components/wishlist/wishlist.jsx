@@ -1,16 +1,15 @@
 import { Flex } from "@chakra-ui/react";
-import CartItem from "./cart-item";
+import WishlistItem from "./wishlist-item";
 
-export default function CartItemList(props) {
+export default function Wishlist(props) {
   const { list } = props;
-
   return (
     <Flex
       flexDirection="column"
       gap={{ md: "2rem", mob1: "1.4rem", mob2: "1.4rem", basic: "2rem" }}
     >
       {list.map((item) => (
-        <CartItem
+        <WishlistItem
           key={item.id}
           title={item.title}
           id={item.id}

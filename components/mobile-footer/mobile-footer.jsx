@@ -24,6 +24,7 @@ function MobileFooter() {
   return (
     <Show below="md">
       <Flex
+        zIndex='10'
         pos="fixed"
         px="12px"
         justifyContent="space-between"

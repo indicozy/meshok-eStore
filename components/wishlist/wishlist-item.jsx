@@ -14,7 +14,7 @@ import { IconDots } from "@tabler/icons";
 import { StarIcon } from "@chakra-ui/icons";
 import Link from 'next/link'
 
-export default function CartItem(props) {
+export default function WishlistItem(props) {
   const { id, title, image, description, value, currency } = props;
   const dm_text = useColorModeValue("black", "white");
   const dm_hover = useColorModeValue("second_white", "second_black");
