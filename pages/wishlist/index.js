@@ -1,5 +1,5 @@
 import { Box, Container, Heading, useColorModeValue } from "@chakra-ui/react";
-import Header from "../../components/header/header";
+import Header from "../../components/header";
 import SideBar from "../../components/orderList/sidebar";
 import Wishlist from "../../components/wishlist/wishlist";
 import { getListOfFavorites } from "../../dummy-data";

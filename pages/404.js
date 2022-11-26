@@ -8,7 +8,7 @@ import {
   Button,
   useColorModeValue,
 } from "@chakra-ui/react";
-import Header from "../components/header/header";
+import Header from "../components/header";
 import Link from "next/link";
 import { IconError404 } from "@tabler/icons";
 function FourOhFour() {

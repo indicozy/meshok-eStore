@@ -1,8 +1,7 @@
-import { Box, useColorModeValue, Heading } from "@chakra-ui/react";
+import { Box, useColorModeValue} from "@chakra-ui/react";
 
-import Header from "../components/header/header";
+import Header from "../components/header";
 import Main from "../components/home/main";
-import NewsBar from "../components/home/news-bar";
 import MobileFooter from "../components/mobile-footer/mobile-footer";
 import { user } from "../dummy-data";
 import { useState, useEffect } from "react";
@@ -16,8 +15,9 @@ export default function Home() {
     user.wishlist = wishlist;
   }, [wishlist]);
 
+  
   return (
-    <Box bgColor={dm_bg}>
+    <Box bgColor={dm_bg} >
       <Header />
       <Main wishlist={wishlist} setWishlist={setWishlist}/>
       <MobileFooter />

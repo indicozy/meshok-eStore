@@ -1,4 +1,4 @@
-import { IconBox, IconCreativeCommonsOff, IconHeart } from "@tabler/icons";
+import { IconBox, IconCreativeCommonsOff, IconUser, IconHeart, IconShoppingCart } from "@tabler/icons";
 
 export const user = {
   id: "user1",
@@ -77,6 +77,25 @@ export const sidebar_buttons = [
   { title: "Orders", link: "/orderList", icon: <IconBox /> },
   { title: "Favorites", link: "/wishlist", icon: <IconHeart /> },
 ];
+export const header_buttons = [
+  {
+    title: 'Sign in',
+    link: "/login",
+    icon: <IconUser />
+  },
+  {
+    title: 'Orders',
+    link: "/orderList",
+    icon: <IconBox />
+  },
+  {
+    title: 'Cart',
+    link: "/cart",
+    icon: <IconShoppingCart />
+  },
+   
+   
+]
 
 export function getListOfItems() {
   return items;

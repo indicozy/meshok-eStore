@@ -12,7 +12,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import Header from "../../components/header/header";
+import Header from "../../components/header";
 import { getListOfItems } from "../../dummy-data";
 import MobileFooter from "../../components/mobile-footer/mobile-footer";
 

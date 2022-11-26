@@ -2,11 +2,13 @@ import {
   Box,
   ListItem,
   UnorderedList,
+  Button,
   Heading,
   useColorModeValue,
+  Flex,
 } from "@chakra-ui/react";
 
-import Link from 'next/link'
+import Link from "next/link";
 import { getListOfCategories } from "../../dummy-data";
 
 function Category() {
@@ -15,7 +17,7 @@ function Category() {
   const dm_text_hover = useColorModeValue("black", "teal_100");
   const bgHeading = useColorModeValue("black", "white");
 
-  const category = getListOfCategories();  
+  const category = getListOfCategories();
 
   return (
     <Box
@@ -27,34 +29,24 @@ function Category() {
       <Heading fontSize="20px" pb="0.6rem" color={bgHeading}>
         Categories
       </Heading>
-      <UnorderedList
-        listStyleType="none"
-        p="0"
-        m="0"
-        position="relative"
-        right="0.5rem"
-        color={dm_text}
-      >
+      <Flex wrap='wrap' gap='.5rem' color={dm_text}>
         {category.map((item, ind) => (
-          <ListItem
+          <Button
             key={ind}
-            py="0.6rem"
+            px='.5rem'
+            fontSize='14px'
             cursor="pointer"
             borderRadius="25px"
-            pl="0.5rem"
-            pr="0.2rem"
             _hover={{
               boxShadow: "xs",
               bgColor: dm_hover,
               color: dm_text_hover,
             }}
           >
-            <Link href={item.link}>
-              {item.title}
-            </Link>      
-          </ListItem>
+            {item.title}
+          </Button>
         ))}
-      </UnorderedList>
+      </Flex>
     </Box>
   );
 }

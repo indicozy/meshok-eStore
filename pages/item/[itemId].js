@@ -1,8 +1,6 @@
 import { useRouter } from "next/router";
 import { getItemById } from "../../dummy-data";
 
-import { Carousel } from "react-responsive-carousel";
-
 import {
   Box,
   Flex,
@@ -18,7 +16,7 @@ import {
 
 import { Link } from "next/link";
 import { StarIcon } from "@chakra-ui/icons";
-import Header from "../../components/header/header";
+import Header from "../../components/header";
 import ImageSlider from "../../components/item/image-slider";
 import { SlideData } from "../../dummy-data";
 
