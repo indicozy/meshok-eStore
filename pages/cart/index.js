@@ -22,7 +22,7 @@ function LoginPage() {
   return (
     <Box>
       <Header />
-      <Box w="100%" pt={{ basic: "135px", md: "75px" }} bgColor={dm_bg} pb='60px'>
+      <Box w="100%" pt={{ basic: "135px", md: "75px" }}  pb='60px'>
         <Container
           display="flex"
           gap="1rem"

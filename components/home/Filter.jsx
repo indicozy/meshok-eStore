@@ -6,8 +6,6 @@ import {
   VStack,
   RangeSlider,
   RangeSliderFilledTrack,
-  InputGroup,
-  InputLeftElement,
   RangeSliderTrack,
   RangeSliderThumb,
   Input,
@@ -53,7 +51,7 @@ function Filter() {
           min={0}
           max={100}
           mb=".5rem"
-          colorScheme="teal"
+          colorScheme="red"
         >
           <RangeSliderTrack>
             <RangeSliderFilledTrack />

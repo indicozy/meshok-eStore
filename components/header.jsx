@@ -3,7 +3,6 @@ import React from "react";
 import {
   Box,
   Container,
-  Flex,
   IconButton,
   Input,
   InputGroup,
@@ -12,7 +11,6 @@ import {
   Menu,
   MenuButton,
   Button,
-  Hide,
 } from "@chakra-ui/react";
 
 import { IconUser, IconShoppingCart } from "@tabler/icons";
@@ -60,7 +58,9 @@ function Header() {
           w={{ md: "670px", basic: "100%" }}
           mr={{ basic: "0", md: "12px" }}
         >
-          <InputLeftElement children={<SearchIcon />} />
+          <InputLeftElement>
+            <SearchIcon />
+          </InputLeftElement>
           <Input placeholder="Search in Store" />
         </InputGroup>
         <Box gap=".5rem" display={{ basic: "none", md: "flex" }}>

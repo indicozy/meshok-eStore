@@ -24,7 +24,5 @@ export const MyTheme = extendTheme({
 		'2xl'	: '96em',
 	},
 	fonts: {
-		heading: 'Montserrat',
-		
 	}
 })

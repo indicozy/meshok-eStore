@@ -28,7 +28,7 @@ function ProductGrid(props) {
         fl: "repeat(4, 1fr)",
       }}
       columnGap="1rem"
-      rowGap="24px"
+      rowGap="1.5rem"
     >
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />

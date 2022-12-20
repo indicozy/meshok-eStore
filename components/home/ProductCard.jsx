@@ -4,10 +4,8 @@ import {
   Button,
   HStack,
   Image,
-  Link,
   Skeleton,
   Stack,
-  StackProps,
   Text,
   useBreakpointValue,
   useColorModeValue,
@@ -21,9 +19,14 @@ export const ProductCard = (props) => {
   const { product, rootProps } = props;
   const { title, imageUrl, price, salePrice, rating } = product;
   return (
-    <Stack spacing={useBreakpointValue({ base: "4", md: "5" })} {...rootProps}>
+    <Stack
+      spacing={useBreakpointValue({ base: "4", md: "5" })}
+      overflow="hidden"
+      position="relative"
+      {...rootProps}
+    >
       <Box position="relative">
-        <AspectRatio ratio={2 / 2}>
+        <AspectRatio ratio={1 / 1}>
           <Image
             src={imageUrl}
             alt={title}
@@ -41,18 +44,9 @@ export const ProductCard = (props) => {
       </Box>
       <Stack>
         <Stack spacing="1" position="relative">
-          <Text
-            w="200px"
-            textOverflow="ellipsis"
-            whiteSpace="nowrap"
-            overflow="hidden"
-            fontWeight="medium"
-            color={useColorModeValue("gray.700", "gray.400")}
-          >
-            {title}
-          </Text>
+          <p id="title">{title}</p>
           {/* <PriceTag price={price} salePrice={salePrice} currency="USD" /> */}
-          <Text>{price}</Text>
+          <Text fontWeight="bold">{price}</Text>
         </Stack>
         <HStack>
           {/* <Rating defaultValue={rating} size="sm" /> */}
@@ -62,7 +56,7 @@ export const ProductCard = (props) => {
         </HStack>
       </Stack>
       <Stack align="center">
-        <Button colorScheme="teal" width="full">
+        <Button colorScheme="green" width="full">
           Add to cart
         </Button>
       </Stack>

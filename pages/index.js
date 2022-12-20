@@ -1,13 +1,13 @@
 import { Box, Container, Flex, useColorModeValue } from "@chakra-ui/react";
 
 import Header from "../components/header";
-import Category from "../components/home/Filter";
+import Filter from "../components/home/Filter";
 import ProductGrid from "../components/home/ProductGrid";
 export default function Home() {
   const dm_bg = useColorModeValue("white", "black");
 
   return (
-    <Box bgColor={dm_bg} h="100vh">
+    <Box bgColor={dm_bg} minH="100vh">
       <Header />
       <Container
         display="flex"
@@ -16,10 +16,9 @@ export default function Home() {
         pt={{ md: "80px", basic: "143px" }}
         maxW="container.xl"
         minW="mob3"
-        bgColor={dm_bg}
         pb="5rem"
       >
-        <Category />
+        <Filter />
         <ProductGrid />
       </Container>
     </Box>
