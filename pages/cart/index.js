@@ -1,3 +1,5 @@
+
+
 import {
   Box,
   Flex,
@@ -13,13 +15,10 @@ import {
 } from "@chakra-ui/react";
 
 import Header from "../../components/header";
-import { getListOfItems } from "../../dummy-data";
-import MobileFooter from "../../components/mobile-footer/mobile-footer";
 
 function LoginPage() {
  
   const dm_bg = useColorModeValue("white", "black");
-  const itemsList = getListOfItems();
   return (
     <Box>
       <Header />
@@ -36,7 +35,6 @@ function LoginPage() {
           </Box>
         </Container>
       </Box>
-			<MobileFooter />
     </Box>
   );
 }

@@ -1,4 +1,4 @@
-import { Global } from "@emotion/react";
+mport { Global } from "@emotion/react";
 
 export default Fonts = () => {
   <Global
