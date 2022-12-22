@@ -25,8 +25,8 @@ export default function Home() {
   return (
     <Box bgColor={dm_bg} minH="100vh">
       <Header onOpen={onOpen} />
-      <Drawer placement={placement} onClose={onClose} isOpen={isOpen} >
-        <DrawerOverlay motionPresent="none"/>
+      <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
+        <DrawerOverlay motionPresent="none" />
         <DrawerContent bgColor={dm_bg}>
           <DrawerCloseButton />
           <DrawerHeader>Filter</DrawerHeader>

@@ -11,6 +11,7 @@ import {
   Menu,
   MenuButton,
   Button,
+  Flex,
 } from "@chakra-ui/react";
 
 import { IconUser, IconShoppingCart, IconFilter } from "@tabler/icons";
@@ -32,7 +33,7 @@ function Header(props) {
       zIndex="100"
     >
       <Container
-        h={{ md: "60px", basic: "123px" }}
+        h={{ md: "60px", basic: "130px" }}
         display="flex"
         maxW="container.xl"
         minW="mob3"
@@ -42,19 +43,23 @@ function Header(props) {
         alignItems="center"
         justifyContent={{ md: "space-between" }}
       >
-        <Box
-          fontFamily="heading"
-          fontWeight="600"
+        <Flex
           mt={{ basic: "1.2rem", md: "0" }}
           mb={{ basic: "12px", md: "0" }}
           mr={{ basic: "0", md: "2rem" }}
-          fontSize="2rem"
-          minWidth="max-content"
-          justifyContent={{ basic: "center", md: "flex-start" }}
-          color={useColorModeValue("teal_300", "teal_100")}
+          justifyContent={{ basic: "space-between", md: "flex-start" }}
+          alignItems="center"
+          w={{ basic: "100%", md: "300px" }}
         >
-          <Link href="/">e-store</Link>
-        </Box>
+          <Link href="/">
+            <Box fontFamily="heading" fontWeight="600" fontSize="2rem">
+              e-store
+            </Box>
+          </Link>
+          <Box display={{ basic: "block", md: "none" }}>
+            <ColorModeButton />
+          </Box>
+        </Flex>
         <Box
           w={{ md: "670px", basic: "100%" }}
           display={{ md: "block", basic: "flex" }}
