@@ -41,7 +41,11 @@ const category = [
 
 function Filter() {
   return (
-    <VStack w="40%" display={{ md: "block", basic: "none" }} spacing="5">
+    <VStack
+      w={{ md: "40%", basic: "100%" }}
+      display={{ md: "block" }}
+      spacing="5"
+    >
       <Box w="75%">
         <Text fontWeight="bold" mb=".5em">
           Price range

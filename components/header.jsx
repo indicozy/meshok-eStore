@@ -6,22 +6,26 @@ import {
   IconButton,
   Input,
   InputGroup,
+  Show,
+  useDisclosure,
   InputLeftElement,
   useColorModeValue,
   Menu,
   MenuButton,
   Button,
+  Flex,
 } from "@chakra-ui/react";
 
-import { IconUser, IconShoppingCart } from "@tabler/icons";
+import { IconUser, IconShoppingCart, IconFilter } from "@tabler/icons";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { SearchIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
 import ColorModeButton from "./buttons/darkModeButton";
 
-function Header() {
+function Header(props) {
   const router = useRouter();
+
   return (
     <Box
       bg={useColorModeValue("white", "black")}
@@ -54,15 +58,23 @@ function Header() {
         >
           <Link href="/">e-store</Link>
         </Box>
-        <InputGroup
+        <Box
           w={{ md: "670px", basic: "100%" }}
-          mr={{ basic: "0", md: "12px" }}
+          display={{ md: "block", basic: "flex" }}
+          gap=".5rem"
         >
-          <InputLeftElement>
-            <SearchIcon />
-          </InputLeftElement>
-          <Input placeholder="Search in Store" />
-        </InputGroup>
+          <IconButton
+            display={{ md: "none", basic: "flex" }}
+            onClick={props.onOpen}
+            icon={<IconFilter />}
+          />
+          <InputGroup w="100%" mr={{ basic: "0", md: "12px" }}>
+            <InputLeftElement>
+              <SearchIcon />
+            </InputLeftElement>
+            <Input placeholder="Search in Store" />
+          </InputGroup>
+        </Box>
         <Box gap=".5rem" display={{ basic: "none", md: "flex" }}>
           <IconButton variant="ghost" icon={<IconShoppingCart />} />
           <Menu>
