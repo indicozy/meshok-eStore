@@ -6,21 +6,18 @@ import {
   IconButton,
   Input,
   InputGroup,
-  Show,
-  useDisclosure,
   InputLeftElement,
   useColorModeValue,
   Menu,
   MenuButton,
   Button,
-  Flex,
 } from "@chakra-ui/react";
 
 import { IconUser, IconShoppingCart, IconFilter } from "@tabler/icons";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
+import { SearchIcon } from "@chakra-ui/icons";
 import ColorModeButton from "./buttons/darkModeButton";
 
 function Header(props) {

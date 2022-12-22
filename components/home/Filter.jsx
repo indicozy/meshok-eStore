@@ -14,27 +14,31 @@ import {
 import Link from "next/link";
 const category = [
   {
-    id: "0",
+    id: 0,
+    title: "All",
+  },
+  {
+    id: 1,
     title: "Computers",
   },
   {
-    id: "1",
+    id: 2,
     title: "Smartphones",
   },
   {
-    id: "2",
+    id: 3,
     title: "Accessors",
   },
   {
-    id: "3",
+    id: 4,
     title: "Keyboards",
   },
   {
-    id: "4",
+    id: 5,
     title: "Headphones",
   },
   {
-    id: "5",
+    id: 6,
     title: "Books",
   },
 ];
@@ -45,6 +49,8 @@ function Filter() {
       w={{ md: "40%", basic: "100%" }}
       display={{ md: "block" }}
       spacing="5"
+      position="relative"
+      h="100%"
     >
       <Box w="75%">
         <Text fontWeight="bold" mb=".5em">
@@ -68,18 +74,29 @@ function Filter() {
           <Input placeholder="$100" />
         </Flex>
       </Box>
-      <Box>
-        <Text fontWeight="bold" pb=".5em">
-          Categories
-        </Text>
-        <Flex wrap="wrap" gap=".5rem">
-          {category.map((item) => (
-            <Button size="xs" key={item.id}>
-              {item.title}
-            </Button>
-          ))}
-        </Flex>
+      <Box overflow="scroll" h="60vh">
+        <Box>
+          <Text fontWeight="bold" pb=".5em">
+            Categories
+          </Text>
+          <Flex wrap="wrap" gap=".5rem">
+            {category.map((item) => (
+              <Button size="xs" key={item.id}>
+                {item.title}
+              </Button>
+            ))}
+          </Flex>
+        </Box>
       </Box>
+      <Button
+        position="absolute"
+        bottom="0"
+        w="100%"
+        colorScheme="blue"
+        display={{ basic: "block", md: "none" }}
+      >
+        Apply
+      </Button>
     </VStack>
   );
 }

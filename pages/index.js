@@ -3,19 +3,15 @@ import {
   Container,
   Drawer,
   DrawerBody,
-  IconButton,
   Hide,
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
-  Flex,
   useColorModeValue,
   useDisclosure,
-  Button,
   DrawerCloseButton,
 } from "@chakra-ui/react";
 
-import { HamburgerIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 import Header from "../components/header";
 import Filter from "../components/home/Filter";
@@ -29,8 +25,8 @@ export default function Home() {
   return (
     <Box bgColor={dm_bg} minH="100vh">
       <Header onOpen={onOpen} />
-      <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
-        <DrawerOverlay />
+      <Drawer placement={placement} onClose={onClose} isOpen={isOpen} >
+        <DrawerOverlay motionPresent="none"/>
         <DrawerContent bgColor={dm_bg}>
           <DrawerCloseButton />
           <DrawerHeader>Filter</DrawerHeader>
