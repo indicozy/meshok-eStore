@@ -8,13 +8,8 @@ import {
   InputGroup,
   InputLeftElement,
   useColorModeValue,
-  Menu,
-  MenuButton,
-  HStack,
-  Button,
   Flex,
   ButtonGroup,
-  Icon,
 } from "@chakra-ui/react";
 
 import {
@@ -26,7 +21,7 @@ import {
 
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
+import { SearchIcon } from "@chakra-ui/icons";
 import ColorModeButton from "./buttons/darkModeButton";
 import Logo from "./buttons/Logo";
 
@@ -34,7 +29,12 @@ function Header(props) {
   const router = useRouter();
 
   return (
-    <Box bg={useColorModeValue("white", "black")} w="100%">
+    <Box
+      bgColor={useColorModeValue("white", "black")}
+      w="100%"
+      mb="1rem"
+      borderBottomWidth="thin"
+    >
       <Container
         h={{ md: "60px", basic: "130px" }}
         display="flex"
@@ -55,7 +55,9 @@ function Header(props) {
           justifyContent="space-between"
         >
           <Logo />
-          <Box display={{md:'none'}}><ColorModeButton/></Box>
+          <Box display={{ md: "none" }}>
+            <ColorModeButton />
+          </Box>
         </Flex>
         <Box
           w={{ md: "670px", basic: "100%" }}
@@ -80,7 +82,7 @@ function Header(props) {
         <ButtonGroup gap=".5rem" display={{ basic: "none", md: "flex" }}>
           <IconButton variant="ghost" icon={<IconHeart />} />
           <IconButton variant="ghost" icon={<IconShoppingCart />} />
-          <IconButton variant="ghost" icon={<IconUser/>} />
+          <IconButton variant="ghost" icon={<IconUser />} />
         </ButtonGroup>
       </Container>
     </Box>

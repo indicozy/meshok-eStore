@@ -1,17 +1,14 @@
-import React from "react";
-import {Flex, Text} from '@chakra-ui/react'
-import ColorModeButton from "./darkModeButton";
-import Link from 'next/link'
+import { Box } from "@chakra-ui/react";
+
+import Link from "next/link";
+
 function Logo() {
   return (
-    <Flex alignItems="center">
-      <Link href="/">
-        <Text fontFamily="heading" fontWeight="600" fontSize="2rem">
-          e-store
-        </Text>
-      </Link>
-      
-    </Flex>
+    <Link href="/">
+      <Box fontFamily="heading" fontSize="2rem" fontWeight="bold">
+        e-store
+      </Box>
+    </Link>
   );
 }
 

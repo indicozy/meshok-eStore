@@ -1,21 +1,19 @@
 import { Grid } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import { ProductCard } from "./ProductCard";
+import { useQuery } from "react-query";
+
+const fetchProducts = async () => {
+  const res = await fetch("https://fakestoreapi.com/products");
+  return res.json();
+};
 function ProductGrid(props) {
   const [products, setProducts] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://fakestoreapi.com/products")
-      .then((response) => {
-        const res = response.data;
-        console.log(res);
-        setProducts(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  const { data, isLoading, error, isSuccess } = useQuery(
+    "products",
+    fetchProducts
+  );
+  console.log(data);
   return (
     <Grid
       w="100%"
@@ -30,9 +28,13 @@ function ProductGrid(props) {
       columnGap="1rem"
       rowGap="1.5rem"
     >
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
+      {error && <b>Error fetching data</b>}
+      {isLoading && <b>Loading...</b>}
+
+      {isSuccess &&
+        data.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
     </Grid>
   );
 }

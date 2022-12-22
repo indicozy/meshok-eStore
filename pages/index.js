@@ -10,27 +10,41 @@ import {
   useColorModeValue,
   useDisclosure,
   DrawerCloseButton,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
 } from "@chakra-ui/react";
 
 import { useState } from "react";
+import CustomContainer from "../components/CustomContainer";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import Filter from "../components/home/Filter";
 import ProductGrid from "../components/home/ProductGrid";
 import MobileNav from "../components/mobileNav";
 export default function Home() {
-  const dm_bg = useColorModeValue("white", "black");
-
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [placement, setPlacement] = useState("left");
 
   return (
-    <Box bgColor={dm_bg} minH="100vh">
+    <Box bgColor={useColorModeValue("white", "black")}>
       <Header onOpen={onOpen} />
+      <Box mb='2rem'>
+      <CustomContainer>
+        <Breadcrumb fontSize="sm" fontWeight="bold">
+          <BreadcrumbItem>
+            <BreadcrumbLink href="#">Home</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="#">Products</BreadcrumbLink>
+          </BreadcrumbItem>
+        </Breadcrumb>
+      </CustomContainer>
+      </Box>
       <MobileNav />
       <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay motionPresent="none" />
-        <DrawerContent bgColor={dm_bg}>
+        <DrawerContent bgColor={useColorModeValue("white", "black")}>
           <DrawerCloseButton />
           <DrawerHeader>Filter</DrawerHeader>
           <DrawerBody>
@@ -38,20 +52,14 @@ export default function Home() {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
-      <Container
-        display="flex"
-        gap="1rem"
-        px={{ basic: "12px", md: "2rem" }}
-        pt='2rem'
-        maxW="container.xl"
-        minW="mob3"
-        pb="5rem"
-      >
-        <Hide below="759px">
-          <Filter />
-        </Hide>
-        <ProductGrid />
-      </Container>
+      <Box mb="5rem">
+        <CustomContainer>
+          <Hide below="759px">
+            <Filter />
+          </Hide>
+          <ProductGrid />
+        </CustomContainer>
+      </Box>
       <Footer />
     </Box>
   );

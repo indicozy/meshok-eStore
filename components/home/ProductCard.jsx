@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import * as React from "react";
 // import { Rating } from './Rating'
-import { FavouriteButton } from "../buttons/FavouriteButton";
+import { FavoriteButton } from "../buttons/FavoriteButton";
 // import { PriceTag } from './PriceTag'
 
 export const ProductCard = (props) => {
@@ -35,7 +35,7 @@ export const ProductCard = (props) => {
             borderRadius={useBreakpointValue({ base: "md", md: "xl" })}
           />
         </AspectRatio>
-        <FavouriteButton
+        <FavoriteButton
           position="absolute"
           top="4"
           right="4"
