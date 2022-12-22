@@ -74,7 +74,7 @@ function Filter() {
           <Input placeholder="$100" />
         </Flex>
       </Box>
-      <Box overflow="scroll" h="60vh">
+      <Box overflowY="scroll" h="60vh">
         <Box>
           <Text fontWeight="bold" pb=".5em">
             Categories

@@ -10,28 +10,31 @@ import {
   useColorModeValue,
   Menu,
   MenuButton,
+  HStack,
   Button,
   Flex,
+  ButtonGroup,
+  Icon,
 } from "@chakra-ui/react";
 
-import { IconUser, IconShoppingCart, IconFilter } from "@tabler/icons";
+import {
+  IconUser,
+  IconShoppingCart,
+  IconFilter,
+  IconHeart,
+} from "@tabler/icons";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { SearchIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
 import ColorModeButton from "./buttons/darkModeButton";
+import Logo from "./buttons/Logo";
 
 function Header(props) {
   const router = useRouter();
 
   return (
-    <Box
-      bg={useColorModeValue("white", "black")}
-      overflow="hidden"
-      position="fixed"
-      w="100%"
-      zIndex="100"
-    >
+    <Box bg={useColorModeValue("white", "black")} w="100%">
       <Container
         h={{ md: "60px", basic: "130px" }}
         display="flex"
@@ -47,18 +50,12 @@ function Header(props) {
           mt={{ basic: "1.2rem", md: "0" }}
           mb={{ basic: "12px", md: "0" }}
           mr={{ basic: "0", md: "2rem" }}
-          justifyContent={{ basic: "space-between", md: "flex-start" }}
-          alignItems="center"
-          w={{ basic: "100%", md: "300px" }}
+          minW="max-content"
+          w={{ basic: "100%", md: "max-content" }}
+          justifyContent="space-between"
         >
-          <Link href="/">
-            <Box fontFamily="heading" fontWeight="600" fontSize="2rem">
-              e-store
-            </Box>
-          </Link>
-          <Box display={{ basic: "block", md: "none" }}>
-            <ColorModeButton />
-          </Box>
+          <Logo />
+          <Box display={{md:'none'}}><ColorModeButton/></Box>
         </Flex>
         <Box
           w={{ md: "670px", basic: "100%" }}
@@ -70,22 +67,21 @@ function Header(props) {
             onClick={props.onOpen}
             icon={<IconFilter />}
           />
-          <InputGroup w="100%" mr={{ basic: "0", md: "12px" }}>
+          <InputGroup w="100%">
             <InputLeftElement>
               <SearchIcon />
             </InputLeftElement>
-            <Input placeholder="Search in Store" />
+            <Input
+              placeholder="Search in Store"
+              mr={{ basic: "0", md: "2rem" }}
+            />
           </InputGroup>
         </Box>
-        <Box gap=".5rem" display={{ basic: "none", md: "flex" }}>
+        <ButtonGroup gap=".5rem" display={{ basic: "none", md: "flex" }}>
+          <IconButton variant="ghost" icon={<IconHeart />} />
           <IconButton variant="ghost" icon={<IconShoppingCart />} />
-          <Menu>
-            <MenuButton as={Button} leftIcon={<IconUser />}>
-              You
-            </MenuButton>
-          </Menu>
-          <ColorModeButton />
-        </Box>
+          <IconButton variant="ghost" icon={<IconUser/>} />
+        </ButtonGroup>
       </Container>
     </Box>
   );

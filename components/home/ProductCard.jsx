@@ -57,9 +57,9 @@ export const ProductCard = (props) => {
           </Text>
         </HStack>
       </Stack>
-      <Stack align="center">
-        <Button colorScheme="green" width="full">
-          Add to cart
+      <Stack align="flex-end">
+        <Button size='sm'>
+          + Add to cart
         </Button>
       </Stack>
     </Stack>
