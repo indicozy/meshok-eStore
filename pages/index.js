@@ -1,6 +1,5 @@
 import {
   Box,
-  Container,
   Drawer,
   DrawerBody,
   Hide,
@@ -16,12 +15,14 @@ import {
 } from "@chakra-ui/react";
 
 import { useState } from "react";
-import CustomContainer from "../components/CustomContainer";
-import Footer from "../components/footer";
-import Header from "../components/header";
-import Filter from "../components/home/Filter";
-import ProductGrid from "../components/home/ProductGrid";
-import MobileNav from "../components/mobileNav";
+
+import CustomContainer from "../custom_ui/CustomContainer";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import Filter from "../components/pages/home/Filter";
+import ProductGrid from "../components/pages/home/ProductGrid";
+import MobileNavBar from "../components/MobileNavBar";
+
 export default function Home() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [placement, setPlacement] = useState("left");
@@ -29,19 +30,19 @@ export default function Home() {
   return (
     <Box bgColor={useColorModeValue("white", "black")}>
       <Header onOpen={onOpen} />
-      <Box mb='2rem'>
-      <CustomContainer>
-        <Breadcrumb fontSize="sm" fontWeight="bold">
-          <BreadcrumbItem>
-            <BreadcrumbLink href="#">Home</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <BreadcrumbLink href="#">Products</BreadcrumbLink>
-          </BreadcrumbItem>
-        </Breadcrumb>
-      </CustomContainer>
+      <MobileNavBar />
+      <Box mb="2rem">
+        <CustomContainer>
+          <Breadcrumb fontSize="sm" fontWeight="bold">
+            <BreadcrumbItem>
+              <BreadcrumbLink href="#">Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="#">Products</BreadcrumbLink>
+            </BreadcrumbItem>
+          </Breadcrumb>
+        </CustomContainer>
       </Box>
-      <MobileNav />
       <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay motionPresent="none" />
         <DrawerContent bgColor={useColorModeValue("white", "black")}>

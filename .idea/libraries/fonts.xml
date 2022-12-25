@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="fonts">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/public/fonts/montserrat.zip!/" />
+      <root url="jar://$PROJECT_DIR$/public/fonts/Helvetica-Font.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

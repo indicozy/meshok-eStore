@@ -4,7 +4,7 @@ import { IconUser, IconShoppingCart, IconHeart } from "@tabler/icons";
 
 import React from "react";
 
-function MobileNav() {
+export default function MobileNavBar() {
   return (
     <ButtonGroup
       bgColor={useColorModeValue("white", "black")}
@@ -12,7 +12,6 @@ function MobileNav() {
       zIndex="100"
       boxShadow="2xl"
       bottom="0"
-
       w="100%"
       justifyContent="space-between"
       display={{ basic: "flex", md: "none" }}
@@ -24,5 +23,3 @@ function MobileNav() {
     </ButtonGroup>
   );
 }
-
-export default MobileNav;

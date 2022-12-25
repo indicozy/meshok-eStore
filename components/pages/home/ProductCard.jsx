@@ -11,9 +11,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import * as React from "react";
-// import { Rating } from './Rating'
-import { FavoriteButton } from "../buttons/FavoriteButton";
-// import { PriceTag } from './PriceTag'
+import { FavoriteButton } from "../../buttons/FavoriteButton";
 
 export const ProductCard = (props) => {
   const { product, rootProps } = props;
@@ -58,9 +56,7 @@ export const ProductCard = (props) => {
         </HStack>
       </Stack>
       <Stack align="flex-end">
-        <Button size='sm'>
-          + Add to cart
-        </Button>
+        <Button size="sm">+ Add to cart</Button>
       </Stack>
     </Stack>
   );
