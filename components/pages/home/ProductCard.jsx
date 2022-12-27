@@ -23,6 +23,7 @@ export const ProductCard = (props) => {
       position="relative"
       {...rootProps}
     >
+      
       <Box position="relative">
         <AspectRatio ratio={1 / 1}>
           <Image

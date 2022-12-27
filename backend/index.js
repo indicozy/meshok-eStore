@@ -1,72 +1,45 @@
-const mongoose = require("mongoose");
 const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const app = express();
-const port = process.env.PORT || 3001;
+const cors = require('cors')
+const port = process.env.PORT || 3002;
 
 dotenv.config({ path: "./config.env" });
 
-const DB = process.env.DATABASE.replace(
+const db = process.env.DATABASE.replace(
   "<password>",
   process.env.DATABASE_PASSWORD
 );
 
+mongoose.set("strictQuery", false);
 mongoose
-  .connect(DB, {
+  .connect(db, {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
   })
-  .then(() => console.log("DB connection established"));
+  .then(() => console.log("db connection successful!"));
+mongoose.Promise = global.Promise;
 
-const productSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, "A product name is required"],
-    unique: true,
-  },
-  rating: {
-    type: Number,
-    default: 0,
-  },
-  price: {
-    type: Number,
-    required: [true, "A product price is required"],
-  },
-  description: String,
-  image: String,
-  category: String,
-  brand: String,
-  tags: [String],
-  createdAt: {
-    type: Date,
-    default: Date.now,
-    required: true,
-  },
+//using cors middlware
+app.use(cors());
+
+
+//middlwares
+app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+
+//init routes
+app.use("/api", require("./routes/api"));
+
+//error handling middlware
+app.use((err, req, res, next) => {
+  // console.log(err);
+  res.status(422).send({error: err.message});
 });
 
-const Product = mongoose.model("Product", productSchema);
-
-const testProduct = new Product({
-  name: "Test Product 2",
-  rating: 3,
-  price: 200,
-  description: "This is a test product",
-  image: "images/test.png",
-  category: "test",
-  brand: "test",
-  tags: ["test"],
-  createdAt: Date.now(),
-});
-
-testProduct
-  .save()
-  .then((doc) => {
-    console.log(doc);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-
-
+//listen for requests
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });

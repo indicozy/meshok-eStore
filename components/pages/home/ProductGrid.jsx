@@ -4,7 +4,7 @@ import { ProductCard } from "./ProductCard";
 import { useQuery } from "react-query";
 
 const fetchProducts = async () => {
-  const res = await fetch("https://fakestoreapi.com/products");
+  const res = await fetch("http://localhost:3002/api/products");
   return res.json();
 };
 function ProductGrid(props) {
@@ -33,7 +33,7 @@ function ProductGrid(props) {
 
       {isSuccess &&
         data.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product._id} product={product} />
         ))}
     </Grid>
   );

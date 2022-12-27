@@ -61,7 +61,7 @@ function Filter() {
           min={0}
           max={100}
           mb=".5rem"
-          colorScheme="red"
+          colorScheme="green"
         >
           <RangeSliderTrack>
             <RangeSliderFilledTrack />
