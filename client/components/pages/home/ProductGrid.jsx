@@ -4,7 +4,7 @@ import { ProductCard } from "./ProductCard";
 import { useQuery } from "react-query";
 
 const fetchProducts = async () => {
-  const res = await fetch("http://localhost:9000/api/products");
+  const res = await fetch("https://next-e-store-c85lhy3pm-sogeking7.vercel.app");
   return res.json();
 };
 function ProductGrid(props) {
