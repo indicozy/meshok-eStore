@@ -7,9 +7,9 @@ const cors = require('cors')
 
 const port = process.env.PORT || 9000;
 
-dotenv.config({ path: "./config.env" });
+dotenv.config({ path: "./.env" });
 
-const db = process.env.DATABASE.replace(
+const db = process.env.DATABASE_URI.replace(
   "<password>",
   process.env.DATABASE_PASSWORD
 );
